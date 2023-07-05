@@ -107,7 +107,6 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **Jorge**
 
@@ -132,7 +131,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/jorgegoco/chat-app/issues).
+Feel free to check the [issues page](https://github.com/jorgegoco/chat-rails/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
