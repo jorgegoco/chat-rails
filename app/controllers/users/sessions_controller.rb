@@ -13,7 +13,10 @@ class Users::SessionsController < Devise::SessionsController
 
   # DELETE /resource/sign_out
   def destroy
+    # Disable Style/HashSyntax rule for this line
+    # rubocop:disable Style/HashSyntax
     ActionCable.server.remote_connections.where(current_user: current_user).disconnect
+    # rubocop:enable Style/HashSyntax
     current_user.update(status: User.statuses[:offline])
     super
   end

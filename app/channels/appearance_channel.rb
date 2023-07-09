@@ -1,6 +1,6 @@
 class AppearanceChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'appearance_channel' 
+    stream_from 'appearance_channel'
   end
 
   def unsubscribed
@@ -31,6 +31,9 @@ class AppearanceChannel < ApplicationCable::Channel
   private
 
   def broadcast_new_status(status)
+    # Disable Style/HashSyntax rule for this line
+    # rubocop:disable Style/HashSyntax
     current_user.update!(status: status)
+    # rubocop:enable Style/HashSyntax
   end
 end

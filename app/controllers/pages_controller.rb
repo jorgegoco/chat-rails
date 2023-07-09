@@ -3,7 +3,8 @@ class PagesController < ApplicationController
   def home; end
 
   private
+
   def set_status
-    current_user.update!(status: User.statuses[:offline]) if current_user
+    current_user&.update!(status: User.statuses[:offline])
   end
 end
