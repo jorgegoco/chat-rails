@@ -7,13 +7,10 @@ class Message < ApplicationRecord
 
   def chat_attachment(index)
     target = attachments[index]
-    return unless attachments.attached? 
+    return unless attachments.attached?
+    return unless target.image? || target.video?
 
-    if target.image?
-      target.variant(resize_to_limit: [150, 150]).processed
-    elseif target.video?
-      target.variant(resize_to_limit: [150, 150]).processed
-    end
+    target.variant(resize_to_limit: [150, 150]).processed
   end
 
   def confirm_participant
