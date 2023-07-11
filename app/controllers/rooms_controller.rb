@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
   def index
     @room = Room.new
     @joined_rooms = current_user.joined_rooms
-    @rooms = Room.search_rooms
+    @rooms = search_rooms
     @users = User.all_except(current_user)
     render 'index'
   end
@@ -15,7 +15,7 @@ class RoomsController < ApplicationController
     @single_room = Room.find(params[:id])
 
     @room = Room.new
-    @rooms = Room.search_rooms
+    @rooms = search_rooms
     @joined_rooms = current_user.joined_rooms
 
     @message = Message.new
