@@ -1,4 +1,4 @@
-module Turbochat
+module ChatRails
   class UserStatus < Application
     config.after_initialize do
       connection = ActiveRecord::Base.connection
