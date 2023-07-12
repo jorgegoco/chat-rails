@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :rooms do
     resources :messages
-    collections do
+    collection do
       post :search
     end
   end
