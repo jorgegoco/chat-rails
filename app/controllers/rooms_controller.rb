@@ -44,7 +44,7 @@ class RoomsController < ApplicationController
       end
     end
   end
-  
+
   def join
     @room = Room.find(params[:id])
     current_user.joined_rooms << @room
