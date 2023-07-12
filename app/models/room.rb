@@ -35,13 +35,15 @@ class Room < ApplicationRecord
 
     target = "room_#{id} last_message"
 
+    # rubocop:disable Style/HashSyntax
     broadcast_update_to('rooms',
-                         target: target,
-                         partial: 'rooms/last_message',
-                         locals: {
-                           room: self,
-                           user: last_message.user,
-                           last_message: last_message
-                         })
+                        target: target,
+                        partial: 'rooms/last_message',
+                        locals: {
+                          room: self,
+                          user: last_message.user,
+                          last_message: last_message
+                        })
+    # rubocop:enable Style/HashSyntax
   end
 end

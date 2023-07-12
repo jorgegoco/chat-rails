@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   before_create :confirm_participant
   has_many_attached :attachments, dependent: :destroy
 
-  after_create_commit do 
+  after_create_commit do
     update_parent_room
     broadcast_append_to room
   end
